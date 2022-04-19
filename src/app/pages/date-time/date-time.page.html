@@ -1,0 +1,39 @@
+<app-header titulo="dateTime" ></app-header> <!-- Para que esto funcione debemos modificar el "date-time.module.ts" -->
+
+<ion-content> <!-- Sección desactualizada en el curso -->
+
+  <!-- Se recomienda que los ion-item se coloquen dentro de un ion-list -->
+  <ion-list>
+
+    <ion-list-header>
+      <ion-label>Datos de nacimiento</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Fecha de nacimiento</ion-label>
+      <ion-datetime [value]="fechaNaci.toISOString()"
+                    display-format="DD MMMM YYYY"
+                    (ionChange)="cambioFecha( $event )"></ion-datetime> <!-- [value]: Fecha por defecto: fecha actual - (ionChange): cada vez que cambia la fecha -->
+    </ion-item>
+
+    <ion-list-header>
+      <ion-label>Restricciones</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Min y Max</ion-label>
+      <ion-datetime display-format="DD MMMM YYYY"
+                    min="2015-01-01"
+                    max="2025-12-31"></ion-datetime> <!-- Especificamos fecha completa: dia, mes y año -->
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Años</ion-label>
+      <ion-datetime display-format="YYYY"
+                    min="2015"
+                    max="2025"></ion-datetime> <!-- Especificamos solo el año -->
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

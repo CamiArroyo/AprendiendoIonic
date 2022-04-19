@@ -1,0 +1,20 @@
+<app-header titulo="checks" ></app-header> <!-- Para que esto funcione debemos modificar el "check.module.ts" -->
+
+<ion-content>
+  <!-- Usualmente los checkbox van dentro de un ion-item: hacemos click en cualquier parte y lo toma -->
+
+  <ion-list>
+    <ion-item *ngFor="let item of data"
+                (click)="onClick(item)"> <!-- "data" está definido y "onClick(item)" está implementado en "check.page.ts" -->
+        <ion-label>{{ item.name }}</ion-label>
+        <ion-checkbox [color]="item.name" 
+                      [(ngModel)] = "item.selected"
+                      slot="end"></ion-checkbox> <!-- Con "[(ngModel)]" aparecen o no seleccionados de entrada -->
+    </ion-item>
+  </ion-list>
+
+  <ion-button (click)="verData()" expand="block">
+    Ver data
+  </ion-button>
+
+</ion-content>

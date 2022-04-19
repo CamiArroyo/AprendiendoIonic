@@ -1,0 +1,33 @@
+<app-header titulo="cards" ></app-header> <!-- Para que esto funcione debemos modificar el "card.module.ts" -->
+
+<ion-content>
+
+  <ion-card mode="ios"> <!-- Queremos que en ambos SO se vea como en Ios -->
+    <ion-card-header>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>Card Title</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-item color="primary"> <!-- No necesariamente un ítem va dentro de una lista - Acá lo usamos como header -->
+      <ion-icon slot="start" name="pin-outline"></ion-icon>
+      <ion-label>Marcador</ion-label>
+    </ion-item>
+    <ion-card-content> <!-- A esto lo usamos como body -->
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, cum necessitatibus, dolor quis neque voluptas saepe cupiditate, error dignissimos esse id? Aspernatur magnam dolorum architecto ab vitae numquam, blanditiis perspiciatis.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Shoto_Todoroki.jpg"> <!-- La imagen es responsive -->
+    <ion-card-content> <!-- A esto lo usamos como body -->
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, cum necessitatibus, dolor quis neque voluptas saepe cupiditate, error dignissimos esse id? Aspernatur magnam dolorum architecto ab vitae numquam, blanditiis perspiciatis.
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

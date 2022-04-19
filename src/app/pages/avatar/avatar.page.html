@@ -1,0 +1,44 @@
+<!-- No usamos el componente "header" -->
+
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title color="primary">Avatar</ion-title>
+
+    <!-- AVATAR EN EL HEADER -->
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <!-- <img src="/assets/stan-lee.jpg" /> -->
+        <ion-img src="/assets/stan-lee.jpg"></ion-img> <!-- ion-img trabaja con carga perezosa: mejor rendimiento -->
+      </ion-avatar> <!-- Path relativo a la raíz del proyecto -->
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- AVATAR DENTRO DE UN CHIP -->
+  <ion-chip color="primary" outline="true"
+            *ngFor="let item of [1,1,1,1,1]"> <!-- Con la propiedad "outline" solo se ven los bordes -->
+    <ion-avatar>
+      <img src="/assets/stan-lee.jpg" />
+    </ion-avatar>
+    <ion-label>Default</ion-label>
+  </ion-chip>
+
+  <!-- AVATAR EN UN LIST -->
+  <ion-list>
+    <ion-item *ngFor="let item of [1,1,1,1,1]">
+      <ion-avatar slot="start">
+        <img src="/assets/stan-lee.jpg" />
+      </ion-avatar>
+      <ion-label>Stan Lee</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -18,12 +18,37 @@ export class InicioPage implements OnInit {
     {
       icon: 'american-football-outline',
       name: 'Action Sheet',
-      redirectTo: '/action-sheet'
+      redirectTo: '/action-sheet' //esto es la ruta que se encuentra en el archivo de app-routing
     },
     {
       icon: 'alert-circle-outline',
       name: 'Alert',
       redirectTo: '/alert'
+    },
+    {
+      icon: 'beaker-outline',
+      name: 'Avatar',
+      redirectTo: '/avatar'
+    },
+    {
+      icon: 'radio-button-off-outline',
+      name: 'Button',
+      redirectTo: '/button'
+    },
+    {
+      icon: 'card-outline',
+      name: 'Cards',
+      redirectTo: '/card'
+    },
+    {
+      icon: 'checkmark-circle-outline',
+      name: 'Checks',
+      redirectTo: '/check'
+    },
+    {
+      icon: 'calendar-outline',
+      name: 'DateTime',
+      redirectTo: '/date-time'
     }
   ];
 
