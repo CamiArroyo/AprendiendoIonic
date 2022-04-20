@@ -29,3 +29,8 @@
 .rojo, .rojo .sc-ion-action-sheet-md {
     color: red !important;
 }
+
+/* Cambio el estilo usando SCSS que buscamos en la documentación */
+ion-item {
+    --background: transparent;
+}
