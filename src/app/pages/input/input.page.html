@@ -1,0 +1,67 @@
+<app-header [titulo]="nombre || 'Input forms'"></app-header>
+
+<ion-content class="ion-padding">
+
+    <!-- Se recomienda colocar los inputs dentro de un ion-list -->
+    <ion-list>
+        <ion-list-header>
+            <ion-label>Input normal</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+            <ion-label>Nombre:</ion-label>
+            <ion-input type="text" placeholder="Awesome Input" [(ngModel)]="nombre"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Floating Label</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="fixed">Fixed Label</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="stacked">Stacked Label</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <!-- Ahora haciendo un formulario -> un form normal de HTML -->
+    <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
+
+        <ion-list-header>
+            <ion-label>Formulario válido: {{ formulario.valid }}</ion-label> <!-- Con "formulario.valid" muestro el estado: T o F -->
+        </ion-list-header>
+
+        <ion-item>
+            <ion-label>Email:</ion-label>
+            <ion-input type="email" 
+                        placeholder="Ingrese email"
+                        name="email"
+                        [(ngModel)]="usuario.email"
+                        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                        required></ion-input> 
+        </ion-item> <!-- Como es "required", si no se completa está en F. Para eso lo asociamos con "[(ngModel)]" y "pattern" es la expresión regular para confirmar que sea un correo válido -->
+    
+        <ion-item>
+            <ion-label>Password:</ion-label>
+            <ion-input type="password" 
+                        placeholder="Ingrese contraseña"
+                        name="password"
+                        [(ngModel)]="usuario.password"
+                        required></ion-input>
+        </ion-item>
+
+        <ion-button [disabled]="formulario.invalid"
+                    type="submit" 
+                    expand="block"> <!-- Si está en F, el botón se deshabilita -->
+            Login
+        </ion-button>
+    
+    </form>
+
+
+</ion-content>

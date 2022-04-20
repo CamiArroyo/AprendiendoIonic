@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">List - Reorder</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="reorderDisabled = !reorderDisabled"> <!-- Al hacer click, se pone en el inverso del estado -->
+        Toggle
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <!-- En este caso (a diferencia del "ion-item-sliding"), el "*ngFor" sigue en el item, no se mueve acá -->
+    <ion-reorder-group [disabled]="reorderDisabled"
+                        (ionItemReorder)="doReorder( $event )"> 
+
+      <ion-item *ngFor="let personaje of personajes">
+        <ion-label>{{ personaje }}</ion-label>
+        <ion-reorder slot="end">
+          <ion-icon name="pizza"></ion-icon> <!-- Cambiamos el ícono -->
+        </ion-reorder> <!-- Con esto indico que se puede reordenar el item -->
+      </ion-item>
+
+    </ion-reorder-group>
+
+  </ion-list>
+
+</ion-content>
