@@ -4,15 +4,18 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 //los que creo yo
 import { IonicModule } from '@ionic/angular';
+import { PopoverInfoComponent } from './popover-info/popover-info.component';
 
 
 
 @NgModule({
   declarations: [ //agrupamos todos los componentes personalizados, así puedo usarlos en otros lados
-    HeaderComponent
+    HeaderComponent,
+    PopoverInfoComponent
   ],
   exports: [ //todo lo que debo usar fuera de este módulo se debe exportar
-    HeaderComponent
+    HeaderComponent,
+    PopoverInfoComponent
   ],
   imports: [ //componentes personalizados
     CommonModule,
